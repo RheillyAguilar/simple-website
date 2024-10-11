@@ -1,42 +1,40 @@
+export class Navigation extends HTMLElement {
+    constructor() {
+        super();
+    }
 
+    connectedCallback() {
+        const shadow = this.attachShadow({ mode: 'open' });
 
-    export class Navigation extends HTMLElement {
-        constructor() {
-            super();
-        }
+        const navbar = document.createElement('div');
+        navbar.classList.add('navbar');
 
-        connectedCallback() {
-            
-            const shadow = this.attachShadow({mode: 'open'});
+        const h1 = document.createElement('h1');
+        h1.classList.add('h1');
+        h1.textContent = 'Sample Logo';
 
+        const ul = document.createElement('ul');
+        ul.classList.add('ul');
 
-            const navbar = document.createElement('div');
-            navbar.classList.add('navbar')
+        const link = ['Home', 'About', 'Service', 'Contact'];
+        link.forEach(item => {
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.classList.add('a');
 
-            const h1 = document.createElement('h1');
-            h1.classList.add('h1');
-            h1.textContent = 'Sample Logo';
+            // Set href to 'index.html' for Home, otherwise use the lowercase item name
+            a.href = item === 'Home' ? 'index.html' : `${item.toLowerCase()}.html`;
+            a.textContent = item;
 
+            li.appendChild(a);
+            ul.appendChild(li);
+        });
 
-            const ul = document.createElement('ul');
-            ul.classList.add('ul');
+        navbar.appendChild(h1);
+        navbar.appendChild(ul);
 
-            const link = ['Home', 'About', 'Service', 'Contact'];
-            link.forEach(item => {
-                const li = document.createElement('li');
-                const a = document.createElement('a');
-                a.classList.add('a');
-                a.href = `${item.toLowerCase()}.html`;
-                a.textContent = item;
-                li.appendChild(a);
-                ul.appendChild(li);
-            });
-
-            navbar.appendChild(h1);
-            navbar.appendChild(ul);
-
-            const style = document.createElement('style');
-            style.textContent = `
+        const style = document.createElement('style');
+        style.textContent = `
             .navbar {
                 display: flex;
                 align-items: center;
@@ -55,14 +53,9 @@
                 text-decoration: none;
                 color: black;
             }
-            `
+        `;
 
-            shadow.appendChild(style);
-            shadow.appendChild(navbar);
-
-
-
-
-        }
-
+        shadow.appendChild(style);
+        shadow.appendChild(navbar);
     }
+}
