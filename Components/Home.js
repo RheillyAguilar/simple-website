@@ -31,7 +31,7 @@ export class Home extends HTMLElement {
 
         const image = document.createElement('img');
         image.classList.add('image');
-        image.src = './sample-image.png';
+        image.src = 'sample-image.png';
 
         home.appendChild(content);
         home.appendChild(container);
