@@ -39,7 +39,6 @@ export class Info extends HTMLElement {
         subject.classList.add('subject');
 
         const textfield = document.createElement('textarea');
-        textfield.setAttribute('onresize', 'none'); 
         textfield.placeholder = 'Message';
         textfield.classList.add('textfield');
         textfield.rows = 10;
@@ -127,6 +126,7 @@ export class Info extends HTMLElement {
                 cursor: pointer;
                 background: red;
                 color: white;
+                margin-top: 25px
             }
             .submit:hover {
                 background: transparent;
