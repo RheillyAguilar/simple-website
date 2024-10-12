@@ -38,12 +38,12 @@ export class Footer extends HTMLElement {
         const ul = document.createElement('ul');
         ul.classList.add('ul');
 
-        const link = ['Home', 'About', 'Service', 'Contact'];
+        const link = ['Home', 'About', 'Service'];
         link.forEach(item => {
             const li = document.createElement('li');
             const a = document.createElement('a');
             a.classList.add('a');
-            a.href = `#${item.toLowerCase()}`;
+            a.href = item === 'Home' ? 'index.html' : `${item.toLowerCase()}.html`;
             a.textContent = item;
             li.appendChild(a);
             ul.appendChild(li);
