@@ -21,6 +21,10 @@ export class Info extends HTMLElement {
         p.classList.add('p');
         p.textContent = `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore at beatae fugit id doloremque magnam pariatur! Ab quis, corporis molestias iste repudiandae assumenda nam perspiciatis quam nulla perferendis distinctio sequi quisquam ipsa eum maxime veritatis odio omnis inventore! Corporis, velit? Possimus deleniti doloribus nam consequuntur commodi facilis repellendus iusto harum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim excepturi quibusdam obcaecati, nisi eveniet blanditiis itaque laborum voluptatum illo corrupti, nam, quod quisquam eum facilis accusantium aliquid impedit necessitatibus ipsa? Provident, a. Quasi temporibus quia laboriosam hic nemo, pariatur qui cum suscipit mollitia, quod accusantium itaque id magnam repellendus deleniti.`
 
+        const contact = document.createElement('h1');
+        contact.classList.add('contact');
+        contact.textContent = `Contact Us`
+
         const form = document.createElement('form');
         form.classList.add('form');
 
@@ -46,6 +50,7 @@ export class Info extends HTMLElement {
         
 
         // Append the Input Form
+        form.appendChild(contact);
         form.appendChild(email);
         form.appendChild(subject);
         form.appendChild(textfield);
