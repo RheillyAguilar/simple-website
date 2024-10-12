@@ -80,6 +80,9 @@ export class Info extends HTMLElement {
             .p {
                 font-size: 23px;
             }
+            .contact {
+                letter-spacing: 10px;
+            }
             .form {
                 display: flex;
                 flex-direction: column;
