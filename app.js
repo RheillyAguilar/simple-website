@@ -7,6 +7,7 @@ import { OtherCard } from "./Components/OtherCard.js";
 import { Footer } from "./Components/Footer.js";
 import { Info } from "./Components/Info.js";
 import { Service } from "./Components/Service.js";
+import { Values } from "./Components/Values.js";
 
 customElements.define('navigation-bar', Navigation);
 customElements.define('home-content', Home);
@@ -16,5 +17,6 @@ customElements.define('other-card', OtherCard);
 customElements.define('footer-component', Footer);
 customElements.define('info-component', Info);
 customElements.define('service-component', Service);
+customElements.define('values-component', Values);
 
 

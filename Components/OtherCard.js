@@ -163,3 +163,4 @@ export class OtherCard extends HTMLElement {
     }
 
 }
+
