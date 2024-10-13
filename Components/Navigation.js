@@ -17,7 +17,7 @@ export class Navigation extends HTMLElement {
         const ul = document.createElement('ul');
         ul.classList.add('ul');
 
-        const link = ['Home', 'About', 'Service'];
+        const link = ['Home', 'Product', 'About', 'Service'];
         link.forEach(item => {
             const li = document.createElement('li');
             const a = document.createElement('a');
