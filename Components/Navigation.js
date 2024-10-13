@@ -44,6 +44,9 @@ export class Navigation extends HTMLElement {
                 padding-left: 20px;
                 padding-right: 20px;
             }
+            .h1 {
+                cursor: default;
+            }
             .ul {
                 display: flex;
                 gap: 30px;

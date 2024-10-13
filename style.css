@@ -36,3 +36,12 @@
     gap: 20px;
     padding: 10rem 0 10rem 0;
 }
+
+.card-service {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 5rem;
+}
