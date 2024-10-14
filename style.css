@@ -45,3 +45,13 @@
     gap: 30px;
     padding: 5rem;
 }
+
+.card-product {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 5rem;
+    padding-bottom: 9rem;
+}

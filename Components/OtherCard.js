@@ -95,13 +95,13 @@ export class OtherCard extends HTMLElement {
                     border-radius: 8px;
                     padding: 16px;
                     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                    max-width: 230px;
+                    width: 230px;
                     text-align: center;
                     transition: transform 0.3s ease;
                 }
             .imageContainer img {
                     max-width: 100%;
-                    height: 20rem;
+                    height: 15rem;
                 }
             .imageContainer img:hover {
                 transform: scale(1.1)
@@ -109,7 +109,6 @@ export class OtherCard extends HTMLElement {
 
             .nameP {
                 font-size: 25px;
-                letter-spacing: 10px;
             }
             
             .priceP {

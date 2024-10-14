@@ -89,26 +89,23 @@ export class Card extends HTMLElement {
         const style = document.createElement('style');
         style.textContent = `
             .card {
-                display: flex;
-                flex-direction: column;
                 border: 1px solid #ddd;
                 border-radius: 8px;
                 padding: 20px;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                max-width: 230px;
+                width: 230px;
                 text-align: center;
                 transition: transform 0.3s ease;
             }
             .imageContainer img {
                 max-width: 100%;
-                height: 20rem;
+                height: 15rem;
             }
             .imageContainer img:hover {
                 transform: scale(1.1)
             }
             .nameP {
                 font-size: 25px;
-                letter-spacing: 10px;
             }
             .priceP {
                 font-size: 20px;

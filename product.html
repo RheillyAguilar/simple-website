@@ -1,19 +1,37 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Simple Landing Page</title>
-</head>
-<body>
-
-
+  </head>
+  <body>
     <navigation-bar></navigation-bar>
-    <h1>Product Page</h1>
-
+    <div class="card-product">
+      <product-component
+        img="./assets/nike.png"
+        name="Nike"
+        price="$39"
+      ></product-component>
+      <product-component
+        img="./assets/anta.png"
+        name="Anta"
+        price="$39"
+      ></product-component>
+      <product-component
+      img="./assets/air-jordan.png"
+      name="Air Jordan"
+      price="$39"
+    ></product-component>
+    <product-component
+    img="./assets/adidas.png"
+    name="Adidas"
+    price="$39"
+  ></product-component>
+    </div>
+    <footer-component></footer-component>
 
     <script type="module" src="app.js"></script>
-</body>
+  </body>
 </html>
