@@ -15,29 +15,46 @@ export class Button extends HTMLElement {
         all.classList.add('all');
         all.textContent = 'All';
 
-        const men = document.createElement('button');
-        men.classList.add('men');
-        men.textContent = 'Men';
+        const wearable = document.createElement('button');
+        wearable.classList.add('wearable');
+        wearable.textContent = 'Wearable';
 
-        const women = document.createElement('button');
-        women.classList.add('women');
-        women.textContent = 'Women';
+        const appliances = document.createElement('button');
+        appliances.classList.add('appliances');
+        appliances.textContent = 'Appliances'
+
+        const gadgets = document.createElement('button');
+        gadgets.classList.add('gadgets');
+        gadgets.textContent = 'Gadgets'
+
+        const utensils = document.createElement('button');
+        utensils.classList.add('utensils');
+        utensils.textContent = 'Utensils'
+
+
 
         all.classList.add('active');
 
         all.addEventListener('click', () => this.handleButtonClick(all, 'all'));
-        men.addEventListener('click', () => this.handleButtonClick(men, 'men'));
-        women.addEventListener('click', () => this.handleButtonClick(women, 'women'));
+        wearable.addEventListener('click', () => this.handleButtonClick(wearable, 'wearable'));
+        appliances.addEventListener('click', () => this.handleButtonClick(appliances, 'appliances'));
+        gadgets.addEventListener('click', () => this.handleButtonClick(gadgets, 'gadgets'));
+        utensils.addEventListener('click', () => this.handleButtonClick(utensils, 'utensils'));
 
 
         container.appendChild(all);
-        container.appendChild(men);
-        container.appendChild(women);
+        container.appendChild(wearable);
+        container.appendChild(appliances);
+        container.appendChild(gadgets);
+        container.appendChild(utensils);
+
+
 
         const style = document.createElement('style');
         style.textContent = `
             .container {
                 display: flex;
+                flex-wrap: wrap;
                 justify-content: center;
                 align-items: center;
                 gap: 15px;
@@ -49,6 +66,7 @@ export class Button extends HTMLElement {
                 width: 7rem;
                 outline: none;
                 border: none;
+                border-radius: 5px;
                 cursor: pointer;
                 transition: background-color 0.3s, color 0.3s;
             }
