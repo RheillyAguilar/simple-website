@@ -9,6 +9,7 @@ export class Product extends HTMLElement {
             "img",
             "name",
             "price",
+            "type"
         ]
     } 
 
@@ -24,6 +25,10 @@ export class Product extends HTMLElement {
         return this.getAttribute('price');
     };
 
+    get type() {
+        return this.getAttribute('type')
+    }
+
     set img(newImg) {
         return this.setAttribute('img', newImg);
     };
@@ -35,6 +40,10 @@ export class Product extends HTMLElement {
     set price(newPrice) {
         return this.setAttribute('price', newPrice);
     };
+
+    set type(newType) {
+        return this.setAttribute('type', newType)
+    }
 
 
     connectedCallback() {

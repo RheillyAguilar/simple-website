@@ -9,6 +9,8 @@ import { Info } from "./Components/About/Info.js";
 import { Service } from "./Components/Service/Service.js";
 import { Values } from "./Components/About/Values.js";
 import { Product } from "./Components/Product/Product.js";
+import { Button } from "./Components/Product/Button.js";
+
 
 customElements.define('navigation-bar', Navigation);
 customElements.define('home-content', Home);
@@ -20,5 +22,6 @@ customElements.define('info-component', Info);
 customElements.define('service-component', Service);
 customElements.define('values-component', Values);
 customElements.define('product-component', Product)
+customElements.define('button-component', Button)
 
 
