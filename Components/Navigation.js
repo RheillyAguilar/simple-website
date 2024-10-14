@@ -1,7 +1,18 @@
-
 export class Navigation extends HTMLElement {
     constructor() {
         super();
+    }
+
+    static get observedAttributes() {
+        return ['icon'];
+    }
+
+    get icon() {
+        return this.getAttribute('icon');
+    }
+
+    set icon(newIcon) {
+        this.setAttribute('icon', newIcon);
     }
 
     connectedCallback() {
@@ -17,13 +28,11 @@ export class Navigation extends HTMLElement {
         const ul = document.createElement('ul');
         ul.classList.add('ul');
 
-        const link = ['Home', 'Product', 'About', 'Service'];
-        link.forEach(item => {
+        const link = ['Home', 'Product', 'About', 'Service', 'Blog'];
+        link.forEach((item) => {
             const li = document.createElement('li');
             const a = document.createElement('a');
             a.classList.add('a');
-
-            // Set href to 'index.html' for Home, otherwise use the lowercase item name
             a.href = item === 'Home' ? 'index.html' : `${item.toLowerCase()}.html`;
             a.textContent = item;
 
@@ -33,6 +42,21 @@ export class Navigation extends HTMLElement {
 
         navbar.appendChild(h1);
         navbar.appendChild(ul);
+
+        const button = document.createElement('div');
+        button.classList.add('button');
+
+        const cart = document.createElement('button');
+        cart.classList.add('cart');
+
+        const cartIcon = document.createElement('img');
+        cartIcon.src = this.icon;
+        cartIcon.alt = 'Cart Icon';
+        cartIcon.classList.add('cart-icon');
+
+        cart.appendChild(cartIcon);
+        button.appendChild(cart);
+        navbar.appendChild(button);
 
         const style = document.createElement('style');
         style.textContent = `
@@ -56,6 +80,20 @@ export class Navigation extends HTMLElement {
             .a {
                 text-decoration: none;
                 color: black;
+            }
+            .button {
+                display: flex;
+                align-items: center;
+            }
+            .cart {
+                border: none;
+                background: transparent;
+                cursor: pointer;
+                padding: 0;
+            }
+            .cart-icon {
+                width: 30px;
+                height: 30px;
             }
         `;
 
