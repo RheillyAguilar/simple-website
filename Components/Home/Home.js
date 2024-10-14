@@ -23,7 +23,7 @@ export class Home extends HTMLElement {
 
         const a = document.createElement('a');
         a.classList.add('a');
-        a.href = '/home.html'
+        a.href = '/index.html'
         a.textContent = 'Explore'
 
         const container = document.createElement('div');
