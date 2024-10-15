@@ -4,15 +4,23 @@ export class Navigation extends HTMLElement {
     }
 
     static get observedAttributes() {
-        return ['icon'];
+        return ['cart', 'user'];
     }
 
-    get icon() {
-        return this.getAttribute('icon');
+    get cart() {
+        return this.getAttribute('cart');
     }
 
-    set icon(newIcon) {
-        this.setAttribute('icon', newIcon);
+    set cart(newCart) {
+        this.setAttribute('cart', newCart);
+    }
+
+    get user() {
+        return this.getAttribute('user');
+    }
+
+    set user(newUser) {
+        this.setAttribute('user', newUser);
     }
 
     connectedCallback() {
@@ -28,8 +36,8 @@ export class Navigation extends HTMLElement {
         const ul = document.createElement('ul');
         ul.classList.add('ul');
 
-        const link = ['Home', 'Product', 'About', 'Service', 'Blog'];
-        link.forEach((item) => {
+        const links = ['Home', 'Product', 'About', 'Service', 'Blog'];
+        links.forEach((item) => {
             const li = document.createElement('li');
             const a = document.createElement('a');
             a.classList.add('a');
@@ -43,20 +51,34 @@ export class Navigation extends HTMLElement {
         navbar.appendChild(h1);
         navbar.appendChild(ul);
 
-        const button = document.createElement('div');
-        button.classList.add('button');
+        const buttonContainer = document.createElement('div');
+        buttonContainer.classList.add('button');
 
-        const cart = document.createElement('button');
-        cart.classList.add('cart');
+        const cartButton = document.createElement('button');
+        cartButton.classList.add('cart');
+        cartButton.setAttribute('aria-label', 'View Cart');
 
         const cartIcon = document.createElement('img');
-        cartIcon.src = this.icon;
+        cartIcon.src = this.cart;
         cartIcon.alt = 'Cart Icon';
         cartIcon.classList.add('cart-icon');
 
-        cart.appendChild(cartIcon);
-        button.appendChild(cart);
-        navbar.appendChild(button);
+        cartButton.appendChild(cartIcon);
+        buttonContainer.appendChild(cartButton);
+
+        const userButton = document.createElement('button');
+        userButton.classList.add('user');
+        userButton.setAttribute('aria-label', 'User Account');
+
+        const userIcon = document.createElement('img');
+        userIcon.src = this.user;
+        userIcon.alt = 'User Icon';
+        userIcon.classList.add('user-icon');
+
+        userButton.appendChild(userIcon);
+        buttonContainer.appendChild(userButton);
+
+        navbar.appendChild(buttonContainer);
 
         const style = document.createElement('style');
         style.textContent = `
@@ -65,8 +87,7 @@ export class Navigation extends HTMLElement {
                 align-items: center;
                 justify-content: space-between;
                 background: gold;
-                padding-left: 20px;
-                padding-right: 20px;
+                padding: 0 20px;
             }
             .h1 {
                 cursor: default;
@@ -84,14 +105,15 @@ export class Navigation extends HTMLElement {
             .button {
                 display: flex;
                 align-items: center;
+                gap: 10px;
             }
-            .cart {
+            .cart, .user {
                 border: none;
                 background: transparent;
                 cursor: pointer;
                 padding: 0;
             }
-            .cart-icon {
+            .cart-icon, .user-icon {
                 width: 30px;
                 height: 30px;
             }
