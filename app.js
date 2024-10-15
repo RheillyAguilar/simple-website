@@ -11,6 +11,8 @@ import { Values } from "./Components/About/Values.js";
 import { Product } from "./Components/Product/Product.js";
 import { Button } from "./Components/Product/Button.js";
 import { Blog } from "./Components/Blog/Blog.js";
+import { Account } from "./Components/Account.js";
+import { SignUp } from "./Components/SignUp.js";
 
 
 customElements.define('navigation-bar', Navigation);
@@ -22,8 +24,10 @@ customElements.define('footer-component', Footer);
 customElements.define('info-component', Info);
 customElements.define('service-component', Service);
 customElements.define('values-component', Values);
-customElements.define('product-component', Product)
-customElements.define('button-component', Button)
-customElements.define('blog-component', Blog)
+customElements.define('product-component', Product);
+customElements.define('button-component', Button);
+customElements.define('blog-component', Blog);
+customElements.define('account-component', Account);
+customElements.define('signup-component', SignUp);
 
 

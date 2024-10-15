@@ -75,6 +75,10 @@ export class Navigation extends HTMLElement {
         userIcon.alt = 'User Icon';
         userIcon.classList.add('user-icon');
 
+        userButton.addEventListener('click', () => {
+            window.location.href = 'account.html'
+        } )
+
         userButton.appendChild(userIcon);
         buttonContainer.appendChild(userButton);
 
