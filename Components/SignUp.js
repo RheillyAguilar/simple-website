@@ -63,6 +63,23 @@ export class SignUp extends HTMLElement {
         passwordDiv.appendChild(passwordIcon);
         passwordDiv.appendChild(password);
 
+        const confirmpasswordDiv = document.createElement('div');
+        confirmpasswordDiv.classList.add('password-div');
+
+        const confirmPass = document.createElement('img');
+        confirmPass.classList.add('password-icon');
+        confirmPass.src = 'assets/lock-solid.svg';
+        confirmPass.alt = 'Password Icon';
+
+        const confirmPassword = document.createElement('input');
+        confirmPassword.type = 'password';
+        confirmPassword.placeholder = 'Confirm Password';
+        confirmPassword.classList.add('password');
+        confirmPassword.required = true;
+
+        confirmpasswordDiv.appendChild(confirmPass);
+        confirmpasswordDiv.appendChild(confirmPassword);
+
         const noAccount = document.createElement('div');
         noAccount.classList.add('no-account');
 
@@ -88,6 +105,7 @@ export class SignUp extends HTMLElement {
         form.appendChild(title);
         form.appendChild(emailDiv);
         form.appendChild(passwordDiv);
+        form.appendChild(confirmpasswordDiv);
         form.appendChild(noAccount)
         form.appendChild(login);
         container.appendChild(form);
